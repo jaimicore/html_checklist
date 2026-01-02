@@ -4,11 +4,37 @@ This is a rudimentary R script to generate an interactive HTML checklist with a 
 
 ![Simple](fig/Simple_checklist_ready.gif)
 
+A similar checklist as the one above above can be generated with the following command:
+
+```bash
+Rscript create_checklist.R                \
+	-i example_input/items_simple.tab        \
+	-t html_template/Checklist_template.html \
+	-o results/Example_checklist_nometa.html \
+	-c '#e6ab02'                             \
+	--title 'title - No Metadata  '          \
+	--subtitle 'Subtitle - No Metadata'      
+```
+
+
+&nbsp;
+
 &nbsp;
 
 Alternatively, users can provide a metadata file to assign categories to the items and create a fancier colorful checklist.
 
 ![Complex](fig/Complex_checklist_ready.gif)
+
+```bash
+Rscript create_checklist.R                \
+	-i example_input/items.tab               \
+	-m example_input/metadata.tab            \
+	-t html_template/Checklist_template.html \
+	-o results/Example_checklist_meta.html   \
+	-g '#e6ab02'                             \
+	--title 'title - With Metadata'          \
+	--subtitle 'Subtitle - With Metadata'              
+```
 
 &nbsp;
 
@@ -25,6 +51,33 @@ to the text displayed in the checklist. 'Group' corresponds to the category name
 one assigned to each item. If no need to categorize the items then the 'Group' columns can be
 empty and a default value will be used.
 
+
+&nbsp;
+
+Example items tab file (with and without groups). The 'Group' column may be empty but must be in the header.
+
+```
+Item   Group
+Uno    Class_1
+Dos    Class_2
+Tres   Class_3
+Cuatro Class_1
+Cinco  Class_2
+Seis   Class_3
+Siete
+```
+
+```
+Item   Group
+Uno
+Dos
+Tres
+Cuatro
+Cinco
+Seis
+Siete
+```
+
 &nbsp;
 
 **`-m` : metadata (Optional)**
@@ -33,6 +86,17 @@ A tab-delimited file containing two columns: 'Group' and 'Color' to simply assig
 a color to each group (category) of items. The 'Group' column in the items and
 metadata files must contain identical unique values, otherwise the script will
 report an error.
+
+&nbsp;
+
+Example metadata file
+
+```
+Group	Color
+Class_1	#1b9e77
+Class_2	#d95f02
+Class_3	#7570b3
+```
 
 &nbsp;
 
