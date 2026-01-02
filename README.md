@@ -6,7 +6,7 @@ This is a rudimentary R script to generate an interactive HTML checklist with a 
 
 Alternatively, users can provide a metadata file to assign categories to the items and create a fancier colorful checklist.
 
-![Complex](Simple_checklist_ready.gif)
+![Complex](fig/Simple_checklist_ready.gif)
 
 &nbsp;
 
