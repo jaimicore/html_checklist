@@ -1,0 +1,73 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Test Rscript
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install system dependencies
+      run: |
+          sudo apt-get update
+#sudo apt-get install -y pandoc g++ libcurl4-openssl-dev libssl-dev libxml2-dev libharfbuzz-dev libfontconfig1-dev libfribidi-dev
+    
+
+# -------------- #
+# R-related test #
+# -------------- #
+
+    - name: Set up R
+      uses: r-lib/actions/setup-r@v2
+      with:
+        r-version: '4.4.0'
+
+    - name: Set RENV_PATHS_ROOT
+      run: echo "RENV_PATHS_ROOT=${{ runner.temp }}/renv" >> $GITHUB_ENV
+
+    - name: Cache R packages
+      uses: actions/cache@v4
+      with:
+        path: ${{ runner.temp }}/renv
+        key: Linux-renv-${{ hashFiles('**/renv.lock') }}
+        restore-keys: |
+          Linux-renv-
+
+    - name: Install renv and restore dependencies
+      run: |
+        Rscript -e "install.packages(c('renv'))"
+        Rscript -e "renv::restore()"
+
+    - name: Generate checklist with metadata
+      run: |
+        Rscript create_checklist.R                   \
+        -i example_input/items.tab                   \
+        -m example_input/metadata.tab                \
+        -t html_template/Checklist_template.html     \
+        -o results/TEST_checklist_with_metadata.html \
+        -g '#e6ab02'                                 \
+        --title 'Test - With Metadata'               \
+        --subtitle 'Test - With Metadata'
+
+    - name: Generate checklist without metadata
+      run: |
+        Rscript create_checklist.R                   \
+        	-i example_input/items_simple.tab          \
+        	-t html_template/Checklist_template.html   \
+        	-o results/TEST_checklist_no_metadata.html \
+        	-c '#e6ab02'                               \
+        	--title 'Test - No metadata'               \
+        	--subtitle 'Test - No metadata'         
