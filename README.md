@@ -2,11 +2,11 @@
 
 This is a rudimentary R script to generate an interactive HTML checklist with a completion bar from a user provided item list.
 
-![hippo](https://media3.giphy.com/media/aUovxH8Vf9qDu/giphy.gif)
+![Simple](fig/Simple_checklist_ready.gif)
 
 Alternatively, users can provide a metadata file to assign categories to the items and create a fancier colorful checklist.
 
-![hippo](https://media3.giphy.com/media/aUovxH8Vf9qDu/giphy.gif)
+![Complex](Simple_checklist_ready.gif)
 
 &nbsp;
 
