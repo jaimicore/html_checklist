@@ -4,9 +4,11 @@ This is a rudimentary R script to generate an interactive HTML checklist with a 
 
 ![Simple](fig/Simple_checklist_ready.gif)
 
+&nbsp;
+
 Alternatively, users can provide a metadata file to assign categories to the items and create a fancier colorful checklist.
 
-![Complex](fig/Simple_checklist_ready.gif)
+![Complex](fig/Complex_checklist_ready.gif)
 
 &nbsp;
 
