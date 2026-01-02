@@ -2,7 +2,11 @@
 
 This is a rudimentary R script to generate an interactive HTML checklist with a completion bar from a user provided item list.
 
+![hippo](https://media3.giphy.com/media/aUovxH8Vf9qDu/giphy.gif)
+
 Alternatively, users can provide a metadata file to assign categories to the items and create a fancier colorful checklist.
+
+![hippo](https://media3.giphy.com/media/aUovxH8Vf9qDu/giphy.gif)
 
 &nbsp;
 
@@ -60,3 +64,17 @@ A default or user-defined color to the items in the checklist (`#6c63ff` ![#6c63
 **`-g` : default group color (Optional)**
 
 A default or user-defined group color. This is assigned when metadata is not provided or the 'Group' column in the items file is empty (`#e6ab02` ![#6c63ff](https://placehold.co/15x15/e6ab02/e6ab02.png) )
+
+
+&nbsp;
+
+## Contributors + Report issues 
+
+&nbsp;
+
+Contributors
+- [Jaime A Castro-Mondragon](https://jaimicore.github.io/) 
+
+ &nbsp;
+
+Use this space to report [issues](https://github.com/jaimicore/html_checklist/issues) related to this repository.
