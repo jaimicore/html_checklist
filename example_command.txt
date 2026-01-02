@@ -1,0 +1,24 @@
+rm -rf results/*
+echo ' '
+echo '1st Example - Include Metadata'
+echo ' '
+Rscript create_checklist.R                           \
+	-i example_input/items.tab                   \
+	-m example_input/metadata.tab                \
+	-t html_template/Checklist_template.html     \
+	-o results/TEST_checklist_with_metadata.html \
+	-g '#e6ab02'                                 \
+	--title 'Test - With Metadata'               \
+	--subtitle 'Test - With Metadata'                 
+
+echo ' '
+echo ' '	
+echo '2nd Example - No Metadata'
+echo ' '
+Rscript create_checklist.R                         \
+	-i example_input/items_simple.tab          \
+	-t html_template/Checklist_template.html   \
+	-o results/TEST_checklist_no_metadata.html \
+	-c '#e6ab02'                               \
+	--title 'Test - No metadata'               \
+	--subtitle 'Test - No metadata'         
