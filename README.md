@@ -1,7 +1,13 @@
 # html_checklist
 
 This is a rudimentary R script to generate an interactive HTML checklist with a completion bar from a user provided item list.
-The following examples show how to run this software in a terminal, but we also created a Shiny app to [run it online](https://jaimicore.shinyapps.io/html-checklist-generator/). 
+
+## Shiny App Usage
+
+You can create the checklist throught an [online Shinyapp](https://jaimicore.shinyapps.io/html-checklist-generator/),
+see requirements below.
+
+![Simple](fig/Shiny_app_ready.gif)
 
 ## Command-Line Usage
 
