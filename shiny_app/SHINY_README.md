@@ -86,6 +86,14 @@ Want to share your app with others who don't have R installed?
 
 Deploy to **shinyapps.io** for free! See [DEPLOYMENT.md](DEPLOYMENT.md) for complete instructions.
 
+### Option 1: Automatic Deployment (Recommended)
+
+Set up GitHub Actions to automatically deploy whenever you push changes:
+- See [../.github/GITHUB_ACTIONS_SETUP.md](../.github/GITHUB_ACTIONS_SETUP.md) for setup instructions
+- Once configured, just push your changes and the app updates automatically
+
+### Option 2: Manual Deployment
+
 **Quick deploy:**
 ```r
 source("shiny_app/deploy_to_shinyapps.R")

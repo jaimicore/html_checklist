@@ -28,9 +28,14 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev
       
-      - name: Install R packages
+      - name: Setup renv and restore packages
         run: |
-          R -e "install.packages(c('shiny', 'data.table', 'dplyr', 'DT', 'colourpicker', 'here', 'rsconnect'), repos='https://cloud.r-project.org/')"
+          R -e "install.packages('renv', repos='https://cloud.r-project.org/')"
+          R -e "renv::restore()"
+      
+      - name: Install deployment packages
+        run: |
+          R -e "if (!require('rsconnect', quietly = TRUE)) install.packages('rsconnect', repos='https://cloud.r-project.org/')"
       
       - name: Copy helper file to shiny_app directory
         run: |

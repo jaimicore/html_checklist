@@ -4,8 +4,10 @@ This is a rudimentary R script to generate an interactive HTML checklist with a 
 
 ## Shiny App Usage
 
-You can create the checklist throught an [online Shinyapp](https://jaimicore.shinyapps.io/html-checklist-generator/),
-see requirements below.
+You can create the checklist through an [online Shiny app](https://jaimicore.shinyapps.io/html-checklist-generator/).
+The app is automatically deployed when changes are pushed to this repository.
+
+For deployment setup, see [GitHub Actions Setup](.github/GITHUB_ACTIONS_SETUP.md).
 
 ![Simple](fig/Shiny_app_ready.gif)
 
