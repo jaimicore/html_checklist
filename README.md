@@ -2,6 +2,10 @@
 
 This is a rudimentary R script to generate an interactive HTML checklist with a completion bar from a user provided item list.
 
+> **New!** A [Shiny web application](shiny_app/) is now available for a user-friendly interface. Can be used locally or [deployed online for free](shiny_app/DEPLOYMENT.md)!
+
+## Command-Line Usage
+
 ![Simple](fig/Simple_checklist_ready.gif)
 
 A similar checklist as the one above above can be generated with the following command:
