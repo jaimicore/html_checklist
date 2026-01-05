@@ -47,3 +47,6 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# Deployment copy of helper file (auto-generated)
+shiny_app/checklist_helpers.R
